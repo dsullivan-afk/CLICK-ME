@@ -81,7 +81,7 @@
     <div class="container" id="brainrot-container">
         <img id="brainrot" src="https://media.tenor.com/6tO9l0jSdtQAAAAi/patapim-brr-brr-patapim.gif" alt="Italian Brainrot GIF" onload="console.log('Brainrot GIF loaded')" onerror="showError()">
         <p>Brr Brr Patapim!</p>
-        <p id="error-message">Oops, the brainrot GIF failed to load!</p>
+        <p id="error-message">Hmmm. Seems like something went wrong while displaying the recipe, rerun to restart page.</p>
     </div>
     <audio id="rickroll-audio" loop>
         <source src="https://www.myinstants.com/media/sounds/rickroll.mp3" type="audio/mpeg">

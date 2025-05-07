@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Surprise Awaits!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #no-button {
+            background-color: #e74c3c;
+            margin-top: 20px;
+        }
+        #no-button:hover {
+            background-color: #c0392b;
+        }
+        #rickroll, #brainrot {
+            max-width: 100%;
+            height: auto;
+        }
+        #rickroll-container, #brainrot-container {
+            display: none;
+        }
+        #error-message {
+            display: none;
+            color: #e74c3c;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="intro">
+        <h1>Ready for a Surprise?</h1>
+        <p>Click the button to reveal something awesome!</p>
+        <button onclick="showRickroll()">Click Me</button>
+    </div>
+    <div class="container" id="rickroll-container">
+        <img id="rickroll" src="https://media.giphy.com/media/Ju7l5y9osyymQ/giphy.gif" alt="Rickroll GIF">
+        <button id="no-button" onclick="showBrainrot()">NO</button>
+    </div>
+    <div class="container" id="brainrot-container">
+        <img id="brainrot" src="https://media.tenor.com/6tO9l0jSdtQAAAAi/patapim-brr-brr-patapim.gif" alt="Italian Brainrot GIF" onload="console.log('Brainrot GIF loaded')" onerror="showError()">
+        <p id="error-message">Oops, the brainrot GIF failed to load!</p>
+    </div>
+    <audio id="rickroll-audio" loop>
+        <source src="https://www.myinstants.com/media/sounds/rickroll.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="brainrot-audio" loop>
+        <source src="https://www.myinstants.com/media/sounds/tralalero-tralala.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        function showRickroll() {
+            document.getElementById("intro").style.display = "none";
+            document.getElementById("rickroll-container").style.display = "block";
+            document.getElementById("rickroll-audio").play();
+            console.log("Rickroll displayed");
+        }
+
+        function showBrainrot() {
+            document.getElementById("rickroll-container").style.display = "none";
+            document.getElementById("brainrot-container").style.display = "block";
+            document.getElementById("rickroll-audio").pause();
+            document.getElementById("brainrot-audio").play();
+            console.log("Brainrot displayed");
+        }
+
+        function showError() {
+            document.getElementById("error-message").style.display = "block";
+            console.error("Brainrot GIF failed to load");
+        }
+    </script>
+</body>
+</html>
